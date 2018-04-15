@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>thochguertel</id>
+            <name>Tobias Hochgürtel</name>
+            <email>tobias.hochguertel@googmail.com</email>
+            <url>https://www.xing.com/profile/Tobias_Hochguertel</url>
+        </developer>
+    </developers>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/tobiashochguertel/documentation-maven-plugin/issues</url>
+    </issueManagement>
+    <scm>
+        <url>https://github.com/tobiashochguertel/documentation-maven-plugin.git</url>
+        <connection>scm:git:git://github.com/tobiashochguertel/documentation-maven-plugin</connection>
+        <developerConnection>scm:git:git://github.com/tobiashochguertel/documentation-maven-plugin</developerConnection>
+    </scm>
+    <organization>
+        <name>Tobias Hochgürtel</name>
+        <url>www.linkedin.com/in/tobiashochguertel</url>
+    </organization>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>demo-reuse-of-doc-concept</artifactId>
@@ -46,22 +75,60 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.7</version>
+                <executions>
+                    <execution>
+                        <id>copy-generated-snippets-in-place</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/generated-snippets</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>
+                                        ${basedir}/src/main/docs/generated-snippets
+                                    </directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>io.github.tobiashochguertel</groupId>
                 <artifactId>documentation-maven-plugin</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
-                <configuration>
-                    <greeting>Welcome</greeting>
-                </configuration>
+                <version>0.0.5-SNAPSHOT</version>
                 <executions>
                     <execution>
+                        <id>arc42</id>
                         <phase>verify</phase>
                         <goals>
-                            <goal>document</goal>
+                            <goal>htmldocument</goal>
                         </goals>
+                        <configuration>
+                            <docDir>${basedir}/target/docs/arc42</docDir>
+                            <docsOutputDirectory>${basedir}/target/docs/arc42</docsOutputDirectory>
+                            <docsInputDirectory>${basedir}/src/main/docs/arc42</docsInputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>api-guide</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>htmldocument</goal>
+                        </goals>
+                        <configuration>
+                            <docDir>${basedir}/target/docs/api-guide</docDir>
+                            <docsOutputDirectory>${basedir}/target/docs/api-guide</docsOutputDirectory>
+                            <docsInputDirectory>${basedir}/src/main/docs/api-guide</docsInputDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

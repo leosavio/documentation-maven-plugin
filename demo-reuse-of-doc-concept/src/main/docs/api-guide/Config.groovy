@@ -10,13 +10,11 @@ inputPath = '.'
 
 //
 inputFiles = [
-		[file: 'arc42-template.adoc', formats: ['html', 'pdf', 'docbook']],
-		[file: 'ppt/Demo.pptx.ad', formats: ['revealjs']]
+		[file: 'api-guide.adoc', formats: ['html', 'pdf', 'docbook']],
 ]
 
-
-taskInputsDirs = ["${inputPath}/src",
-				  "${inputPath}/images",
+taskInputsDirs = [
+		"${inputPath}/src",
 ]
 
-taskInputsFiles = ["${inputPath}/arc42-template.adoc"]
+taskInputsFiles = ["${inputPath}/api-guide.adoc"]

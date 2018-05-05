@@ -1,0 +1,48 @@
+== Overview
+
+This is a maven build plugin which helps me to generate the documentation of my projects. In my projects the final documentation ( _document_ ) is an aggregated documentation from several additional documents. Additional documents are common generated via an external command, by an maven build step or are provided on other ways. These steps to provide the additional documentations has to be done before the final document is created, to referential include content from them.
+
+When all additional documents are in place the final documentation can be created.
+
+An example for an additional document which gets included into the final documentation is the API-Guide which is builded via https://projects.spring.io/spring-restdocs/[Spring REST Docs] in the `intregration-test` phase.
+Spring REST Docs creates auto-generated snippets files (asciidoc) from integrations-tests run (Spring MVC, or RestAssured, or other REST-Testing Frameworks) which describe how-to-use my projects RESTful API by providing the necessary informations like a `curl` command-line example, header fields, content-type and so on.
+
+=== Short
+
+Simple way to kick-start documentation in your project without complexity (no pom-inheritance, just to add `documentation-maven-plugin` build plugin) which combines doctoolchain, spring-rest-docs and asciidoctor documents in the build process to an documentation.
+
+=== Why a maven-plugin?
+
+Because I don't wanted to explain how to activate writing of documentation in a software project by an complex adjustment of `pom.xml`, because that's boring for listeners. But including a single dependency sounds interesting for the audience.
+
+It makes the build of the documentation more standalone, decouples it from the rest of the project's pom.xml and it's more cohesion whe everyyhing is combined in one maven-plugin
+
+== Dependencies
+
+- https://github.com/tobiashochguertel/docToolchain[doctoolchain] (my fork of https://github.com/docToolchain with improvements)
+- https://github.com/languitar/drawio-batch[drawio-batch] Command line converter for https://draw.io[draw.io] diagrams
+
+.A few words about my fork of doctoolchain:
+====
+https://github.com/tobiashochguertel/docToolchain[doctoolchain] (my fork of https://github.com/docToolchain with improvements)
+
+* Includes spring-rest-docs dependency to provide the asciidoctor macros from spring-rest-docs in doctoolchains build process
+* Fixes a Issue a chained maven and gradle build.
+
+The problem was that when doctoolchain build the final documentation it uses the spring-rest-docs provided asciidoctor macros, these macros use the gradle-build snippet directory-path which is `build/generated-snippets` but the snippets are already generated from maven and stored in maven's target directory `target/generated-snippets/`. I add a `System.setProperty("maven.home", "/usr/local/Cellar/maven/3.5.3/libexec")` in scripts/AsciiDocBasics.gradle` of doctoolchain, then spring-rest-docs things that we use maven and uses the maven path to snippets.
+====
+
+
+== Helpfully resources:
+
+.Asciidoctor
+- https://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual]
+- https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
+- https://powerman.name/doc/asciidoc[POWERMAN - AsciiDoc cheatsheet]
+
+.docToolchain
+- https://doctoolchain.github.io/docToolchain/[docToolchain Manual]
+
+.Spring-REST-Docs
+- https://github.com/spring-projects/spring-restdocs/issues/434[Spring-Rest-Docs issue Is there an way to create the api-guide from commandline with asciidoctor?]
+- https://docs.spring.io/spring-restdocs/docs/current/reference/html5/[Spring REST Docs]

@@ -28,16 +28,111 @@
         <url>https://github.com/tobiashochguertel/documentation-maven-plugin/issues</url>
     </issueManagement>
     <scm>
-        <url>https://github.com/tobiashochguertel/documentation-maven-plugin.git</url>
-        <connection>scm:git:git://github.com/tobiashochguertel/documentation-maven-plugin</connection>
-        <developerConnection>scm:git:git://github.com/tobiashochguertel/documentation-maven-plugin</developerConnection>
+        <connection>scm:git:git://github.com:tobiashochguertel/documentation-maven-plugin.git</connection>
+        <developerConnection>scm:git:ssh://github.com:tobiashochguertel/documentation-maven-plugin.git</developerConnection>
+        <url>https://github.com/tobiashochguertel/documentation-maven-plugin/tree/master</url>
     </scm>
     <organization>
         <name>Tobias Hochgürtel</name>
         <url>www.linkedin.com/in/tobiashochguertel</url>
     </organization>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
     <modules>
         <module>documentation-maven-plugin</module>
         <module>demo-reuse-of-doc-concept</module>
     </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Eliminates the need to explicitly execute the clean phase of the clean lifecycle. Just run `mvn verify` to do a `mvn clean verify`-->
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>io.github.tobiashochguertel</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.7.0</version>
+                        <configuration>
+                            <source>1.8</source>
+                            <target>1.8</target>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <keyname>${gpg.keyname}</keyname>
+                                    <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <!--
+            cd /Users/hochguertelto/documentation-concept/part-spring-rest-docs/github/documentation-maven-plugin
+            killall -2 gpg-agent; mvn clean verify -P io.github.tobiashochguertel
+            mvn clean deploy -P io.github.tobiashochguertel
+            -->
+        </profile>
+    </profiles>
 </project>

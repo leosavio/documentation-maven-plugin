@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -22,30 +23,38 @@
         <url>https://github.com/tobiashochguertel/documentation-maven-plugin/issues</url>
     </issueManagement>
     <scm>
-        <url>https://github.com/tobiashochguertel/documentation-maven-plugin.git</url>
-        <connection>scm:git:git://github.com/tobiashochguertel/documentation-maven-plugin</connection>
-        <developerConnection>scm:git:git://github.com/tobiashochguertel/documentation-maven-plugin</developerConnection>
+        <connection>scm:git:git://github.com:tobiashochguertel/documentation-maven-plugin.git</connection>
+        <developerConnection>scm:git:ssh://github.com:tobiashochguertel/documentation-maven-plugin.git</developerConnection>
+        <url>https://github.com/tobiashochguertel/documentation-maven-plugin/tree/master</url>
     </scm>
     <organization>
         <name>Tobias Hochgürtel</name>
         <url>www.linkedin.com/in/tobiashochguertel</url>
     </organization>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>demo-reuse-of-doc-concept</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <description>Demo project for Spring Boot</description>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <groupId>io.github.tobiashochguertel</groupId>
+    <artifactId>demo-reuse-of-doc-concept</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <description>Demo project for documentation-maven-plugin, with Spring Boot.</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>

@@ -22,15 +22,12 @@ As an plugin which does all the configuration and handling of dependecies makes 
 - https://github.com/tobiashochguertel/docToolchain[doctoolchain] (my fork of https://github.com/docToolchain with improvements)
 - https://github.com/languitar/drawio-batch[drawio-batch] Command line converter for https://draw.io[draw.io] diagrams
 
-.A few words about my fork of doctoolchain:
-****
-https://github.com/tobiashochguertel/docToolchain[doctoolchain] (my fork of https://github.com/docToolchain with improvements)
+=== A few words about my fork of https://github.com/tobiashochguertel/docToolchain[doctoolchain]:
 
 * Includes spring-rest-docs dependency to provide the asciidoctor macros from spring-rest-docs in doctoolchains build process
 * Fixes a Issue a chained maven and gradle build.
 
 The problem was that when doctoolchain build the final documentation it uses the spring-rest-docs provided asciidoctor macros, these macros use the gradle-build snippet directory-path which is `build/generated-snippets` but the snippets are already generated from maven and stored in maven's target directory `target/generated-snippets/`. I add a `System.setProperty("maven.home", "/usr/local/Cellar/maven/3.5.3/libexec")` in scripts/AsciiDocBasics.gradle` of doctoolchain, then spring-rest-docs things that we use maven and uses the maven path to snippets.
-****
 
 
 == Helpfully resources:

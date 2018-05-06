@@ -5,7 +5,8 @@ public enum Goal {
 	HTML(Constants.HTMLDOCUMENT),
 	DOCX(Constants.DOCXDOCUMENT),
 	CONFLUENCE(Constants.PUBLISH_TO_CONFLUENCE),
-	PREPARE(Constants.PREPARE);
+	PREPARE(Constants.PREPARE),
+	CONVERT_DRAWIO(Constants.CONVERT_DRAWIO);
 
 	public final String goal;
 
@@ -29,5 +30,6 @@ public enum Goal {
 		static final String DOCXDOCUMENT = "docxdocument";
 		static final String PUBLISH_TO_CONFLUENCE = "publishtoconfluence";
 		static final String PREPARE = "prepare";
+		static final String CONVERT_DRAWIO = "convertdrawio";
 	}
 }

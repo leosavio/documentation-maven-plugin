@@ -4,7 +4,8 @@ enum Documenttype {
 	PDF("generatePDF.sh"),
 	HTML("generateHTML.sh"),
 	DOCX("generateDocx.sh"),
-	CONFLUENCE("publishToConfluence.sh");
+	CONFLUENCE("publishToConfluence.sh"),
+	DRAWIO("convertDrawIoImagesToPng.sh");
 
 	private String scriptname;
 

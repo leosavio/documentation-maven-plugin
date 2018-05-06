@@ -1,0 +1,34 @@
+// asciidoc settings for DE (German)
+// ==================================
+// toc-title definition MUST follow document title without blank line!
+:toc-title: Inhaltsverzeichnis
+
+// enable table-of-contents
+:toc:
+:toclevels: 5
+
+:caution-caption: Achtung
+:important-caption: Wichtig
+:note-caption: Hinweis
+:tip-caption: Tip
+:warning-caption: Warnung
+
+:appendix-caption: Anhang
+:example-caption: Beispiel
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:experimental:
+:source-highlighter: highlightjs
+
+:img-drawio: drawio-diagrams
+////
+Some reuse-able ideas to improve the template and documentation concept:
+
+These if-when-not already defined variable declarations helps us to be flexibel for the future, to restructure when we want and lets the documentation still in a healthy state.
+////
+
+// where are images located?
+:imagesdir: ./images
+
+// where are the subsection asciidoc stored?
+:includedir: ./src

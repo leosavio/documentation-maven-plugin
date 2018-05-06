@@ -7,3 +7,8 @@
 
 // where are images located?
 :imagesdir: ./images
+
+:img-drawio: drawio-diagrams
+
+// where are the subsection asciidoc stored?
+:includedir: ./src

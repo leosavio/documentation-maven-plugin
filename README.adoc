@@ -9,13 +9,13 @@ Spring REST Docs creates auto-generated snippets files (asciidoc) from integrati
 
 === Short
 
-Simple way to kick-start documentation in your project without complexity (no pom-inheritance, just to add `documentation-maven-plugin` build plugin) which combines doctoolchain, spring-rest-docs and asciidoctor documents in the build process to an documentation.
+Simple way to kick-start documentation in your project without complexity (no pom-inheritance, just to add `documentation-maven-plugin` build plugin) which combines doctoolchain, spring-rest-docs and asciidoctor documents in the build process to an documentation. It enabled developers to write docs-as-code.
 
 === Why a maven-plugin?
 
-Because I don't wanted to explain how to activate writing of documentation in a software project by an complex adjustment of `pom.xml`, because that's boring for listeners. But including a single dependency sounds interesting for the audience.
+Because I wanted to hold the effort as low as possible to activate writing of documentation in a software project. And I want to quick way to attach the solution to existing projects without fear.
 
-It makes the build of the documentation more standalone, decouples it from the rest of the project's pom.xml and it's more cohesion whe everyyhing is combined in one maven-plugin
+As an plugin which does all the configuration and handling of dependecies makes the implementation of the documentation concept more resilience. With this plugin the build of the documentation is nearly standalone, decoupled from the rest of the project's pom.xml and everything what relates to building the documentation is within (strong cohesion).
 
 == Dependencies
 

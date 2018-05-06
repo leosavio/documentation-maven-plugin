@@ -113,7 +113,7 @@
             <plugin>
                 <groupId>io.github.tobiashochguertel</groupId>
                 <artifactId>documentation-maven-plugin</artifactId>
-                <version>0.0.5-SNAPSHOT</version>
+                <version>0.0.6-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>arc42</id>
@@ -125,6 +125,7 @@
                             <docDir>${basedir}/target/docs/arc42</docDir>
                             <docsOutputDirectory>${basedir}/target/docs/arc42</docsOutputDirectory>
                             <docsInputDirectory>${basedir}/src/main/docs/arc42</docsInputDirectory>
+                            <drawioDocDir>${basedir}/target/docs/arc42/images/drawio-diagrams</drawioDocDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -137,6 +138,7 @@
                             <docDir>${basedir}/target/docs/api-guide</docDir>
                             <docsOutputDirectory>${basedir}/target/docs/api-guide</docsOutputDirectory>
                             <docsInputDirectory>${basedir}/src/main/docs/api-guide</docsInputDirectory>
+                            <drawioDocDir>${basedir}/target/docs/api-guide/images/drawio-diagrams</drawioDocDir>
                         </configuration>
                     </execution>
                 </executions>

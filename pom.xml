@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.tobiashochguertel</groupId>
     <artifactId>documentation-maven-plugin-reactor</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9-SNAPSHOT</version>
     <packaging>pom</packaging>
     <licenses>
         <license>

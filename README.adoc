@@ -34,6 +34,7 @@ I add a `System.setProperty("maven.home", "/usr/local/Cellar/maven/3.5.3/libexec
 == How to use
 
 Snapshots are available at OSS Sonatype Snapshot Repository:  https://oss.sonatype.org/content/repositories/snapshots/io/github/tobiashochguertel/[documentation-maven-plugin Snapshots]
+Releases are available at Maven Central Repository: https://mvnrepository.com/search?q=tobiashochguertel[tobiashochguertel at mvnrepository.com]
 
 .pom.xml usage example:
 [source,xml]

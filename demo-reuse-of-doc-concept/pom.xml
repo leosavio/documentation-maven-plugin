@@ -25,7 +25,7 @@
         <connection>scm:git:git://github.com/tobiashochguertel/documentation-maven-plugin.git</connection>
         <developerConnection>scm:git:ssh://github.com/tobiashochguertel/documentation-maven-plugin.git</developerConnection>
         <url>https://github.com/tobiashochguertel/documentation-maven-plugin/tree/master</url>
-        <tag>documentation-maven-plugin-reactor-0.0.9</tag>
+        <tag>documentation-maven-plugin-reactor-0.0.8</tag>
     </scm>
     <organization>
         <name>Tobias Hochgürtel</name>
@@ -34,7 +34,7 @@
     <parent>
         <groupId>io.github.tobiashochguertel</groupId>
         <artifactId>documentation-maven-plugin-reactor</artifactId>
-        <version>0.0.9</version>
+        <version>0.0.10-SNAPSHOT</version>
     </parent>
     <distributionManagement>
         <snapshotRepository>
@@ -125,7 +125,7 @@
             <plugin>
                 <groupId>io.github.tobiashochguertel</groupId>
                 <artifactId>documentation-maven-plugin</artifactId>
-                <version>0.0.9</version>
+                <version>0.0.10-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>arc42</id>

@@ -44,7 +44,7 @@ Snapshots are available at OSS Sonatype Snapshot Repository:  https://oss.sonaty
         <plugin>
             <groupId>io.github.tobiashochguertel</groupId>
             <artifactId>documentation-maven-plugin</artifactId>
-            <version>0.0.6-SNAPSHOT</version>
+            <version>0.0.7</version>
             <executions>
                 <execution>
                     <id>arc42</id>

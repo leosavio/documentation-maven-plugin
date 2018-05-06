@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
-        </license>
-    </licenses>
-    <developers>
-        <developer>
-            <id>thochguertel</id>
-            <name>Tobias Hochgürtel</name>
-            <email>tobias.hochguertel@googmail.com</email>
-            <url>https://www.xing.com/profile/Tobias_Hochguertel</url>
-        </developer>
-    </developers>
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/tobiashochguertel/documentation-maven-plugin/issues</url>
-    </issueManagement>
-    <scm>
-        <connection>scm:git:git://github.com/tobiashochguertel/documentation-maven-plugin.git</connection>
-        <developerConnection>scm:git:ssh://github.com/tobiashochguertel/documentation-maven-plugin.git</developerConnection>
-        <url>https://github.com/tobiashochguertel/documentation-maven-plugin/tree/master</url>
-        <tag>documentation-maven-plugin-reactor-0.0.8</tag>
-    </scm>
-    <organization>
-        <name>Tobias Hochgürtel</name>
-        <url>www.linkedin.com/in/tobiashochguertel</url>
-    </organization>
     <parent>
         <groupId>io.github.tobiashochguertel</groupId>
         <artifactId>documentation-maven-plugin-reactor</artifactId>

@@ -132,6 +132,8 @@
             cd /Users/hochguertelto/documentation-concept/part-spring-rest-docs/github/documentation-maven-plugin
             killall -2 gpg-agent; mvn clean verify -P io.github.tobiashochguertel
             mvn clean deploy -P io.github.tobiashochguertel
+
+            http://central.sonatype.org/pages/apache-maven.html#nexus-staging-maven-plugin-for-deployment-and-release
             -->
         </profile>
     </profiles>

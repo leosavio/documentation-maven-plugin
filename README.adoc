@@ -45,7 +45,7 @@ Releases are available at Maven Central Repository: https://mvnrepository.com/se
         <plugin>
             <groupId>io.github.tobiashochguertel</groupId>
             <artifactId>documentation-maven-plugin</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.10</version>
             <executions>
                 <execution>
                     <id>arc42</id>

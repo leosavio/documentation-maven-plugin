@@ -19,7 +19,9 @@
     </distributionManagement>
     <artifactId>demo-reuse-of-doc-concept</artifactId>
     <packaging>jar</packaging>
+    <name>demo-reuse-of-doc-concept</name>
     <description>Demo project for documentation-maven-plugin, with Spring Boot.</description>
+    <url>https://github.com/tobiashochguertel/documentation-maven-plugin</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

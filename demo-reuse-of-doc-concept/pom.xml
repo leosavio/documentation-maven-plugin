@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.github.tobiashochguertel</groupId>
         <artifactId>documentation-maven-plugin-reactor</artifactId>
-        <version>0.0.10</version>
+        <version>0.0.11-SNAPSHOT</version>
     </parent>
     <distributionManagement>
         <snapshotRepository>
@@ -105,7 +105,7 @@
             <plugin>
                 <groupId>io.github.tobiashochguertel</groupId>
                 <artifactId>documentation-maven-plugin</artifactId>
-                <version>0.0.10</version>
+                <version>0.0.11-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>arc42</id>

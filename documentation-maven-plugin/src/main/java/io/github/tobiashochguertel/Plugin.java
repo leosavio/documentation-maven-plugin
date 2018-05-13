@@ -5,7 +5,7 @@ final class Plugin {
 	static final String NAME = "documentation";
 	static final String GROUPID = "io.github.tobiashochguertel";
 	static final String ARTIFACTID = "documentation-maven-plugin";
-	static final String VERSION = "0.0.6-SNAPSHOT";
+	static final String VERSION = "0.0.11-SNAPSHOT";
 	static final String TYPE = "maven-plugin";
 
 	static String and(Goal goal) {

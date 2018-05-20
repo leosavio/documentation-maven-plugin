@@ -9,7 +9,7 @@ final class Plugin {
 	static final String TYPE = "maven-plugin";
 
 	static String and(Goal goal) {
-		return new StringBuffer().append(NAME).append(":").append(goal).toString();
+		return NAME + ":" + goal;
 	}
 
 	/**

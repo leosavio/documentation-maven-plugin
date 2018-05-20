@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 
 # DOCDIR, specifies location of Config.groovy (doctoolchain project configuration file).
 DOCDIR="$1"
